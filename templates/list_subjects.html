@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/list_subjects.css') }}">
+{% endblock %}
+{% block content %}
+<h2>Manage Subjects</h2>
+<a href="{{ url_for('add_categories') }}" class="btn btn-outline-primary mb-3">+Add Subjects</a>
+<table class="table table-bordered">
+    <thead>
+        <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        {% for cat in subjects %}
+        <tr>
+            <td>{{ cat.name }}</td>
+            <td>{{ cat.description }}</td>
+            <td>
+            
+            </td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

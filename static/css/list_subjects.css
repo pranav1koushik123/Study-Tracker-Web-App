@@ -1,0 +1,96 @@
+/* ===== Animated Gradient Background ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #8e2de2, #4a00e0, #2193b0, #6dd5ed);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    padding: 60px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== Page Title ===== */
+h2 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ===== Glass Button ===== */
+.btn-outline-primary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 8px 18px;
+    transition: 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    border: none;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Glass Table Container ===== */
+.table {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+/* Table Header */
+.table thead {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.table thead th {
+    border: none;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Body */
+.table tbody td {
+    border: none;
+    padding: 14px;
+}
+
+/* Row Hover Effect */
+.table tbody tr {
+    transition: 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.01);
+}
+
+/* Remove Bootstrap border look */
+.table-bordered > :not(caption) > * > * {
+    border: none;
+}
+
+/* Center the add button */
+a.btn {
+    display: inline-block;
+    margin-bottom: 20px;
+}

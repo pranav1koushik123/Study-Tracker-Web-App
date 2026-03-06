@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>Hello {{ username }} 👋</h2>
+
+    <div class="mb-3">
+        <a href="{{ url_for('add_session') }}" class="btn btn-primary">+ Add Session</a>
+        <a href="{{ url_for('list_subjects') }}" class="btn btn-secondary">Manage Subjects</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger float-end">Logout</a>
+    </div>
+
+    <!-- Bootstrap Row -->
+    <div class="row">
+
+        <!-- Chart Card -->
+        <div class="col-md-8">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+                    Study Hours by Subject
+                </div>
+
+                <div class="card-body">
+                    <canvas id="studyChart"></canvas>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Example Stats Card -->
+        <div class="col-md-4">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-success text-white">
+                    Study Stats
+                </div>
+
+                <div class="card-body">
+                    <p>Total Subjects: {{ subjects|length }}</p>
+                    <p>Total Sessions: {{ hours|length }}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ChartJS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const ctx = document.getElementById("studyChart");
+
+new Chart(ctx, {
+
+type: "bar",
+
+data: {
+
+labels: {{ subjects | tojson }},
+
+datasets: [{
+
+label: "Study Hours",
+
+data: {{ hours | tojson }},
+
+backgroundColor: "rgba(54, 162, 235, 0.7)"
+
+}]
+
+},
+
+options: {
+
+responsive: true,
+
+plugins: {
+
+legend: {
+display: true
+}
+
+},
+
+scales: {
+
+y: {
+beginAtZero: true
+}
+
+}
+
+}
+
+});
+
+});
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_subjects.css') }}">
+{% endblock %}
+{% block content %}
+<h2>{{ 'Edit' if subjects else 'Add'}} Subjects</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="enter the Subject" class="form-control mb-3">
+        <input type="text" name="description" placeholder="Description(optional)" class="form-control mb-3">
+        <button type="submit" class="btn btn-success">submit</button>
+    </form>
+{% endblock %}
