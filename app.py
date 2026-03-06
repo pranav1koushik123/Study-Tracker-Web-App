@@ -136,6 +136,31 @@ def add_categories():
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+#-------------Edit option----#
+@app.route('/subjects/edit/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit_category(id):
+    category = Subjects.query.get_or_404(id)
+
+    if request.method == 'POST':
+        category.name = request.form['name']
+        category.description = request.form['description']
+        db.session.commit()
+        flash('Subjects updated!', 'success')
+        return redirect(url_for('list_subjects'))
+
+    return render_template('edit_category.html', category=category)
+
+#-------------Delete option------------#
+@app.route('/categories/delete/<int:id>')
+@login_required
+def delete_category(id):
+    category = Subjects.query.get_or_404(id)
+    db.session.delete(category)
+    db.session.commit()
+    flash('subjects deleted!', 'success')
+    return redirect(url_for('list_subjects'))
     
 # ---------------- CREATE TABLES ----------------
 if __name__ == '__main__':
