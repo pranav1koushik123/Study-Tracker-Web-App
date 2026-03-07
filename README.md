@@ -75,6 +75,13 @@ venv\Scripts\activate
 python app.py
 http://127.0.0.1:5000
 
+Authentication...
+Register..
+<img width="677" height="818" alt="image" src="https://github.com/user-attachments/assets/149ca5fa-86ae-4652-8f8d-81e7912e5002" />
+
+Login..
+<img width="711" height="892" alt="image" src="https://github.com/user-attachments/assets/8632b98f-d366-48ec-b579-f3972c3a3f97" />
+
 DashBoard..
 <img width="1800" height="857" alt="image" src="https://github.com/user-attachments/assets/8a1545df-2699-4fb8-add7-084dfaede753" />
 
