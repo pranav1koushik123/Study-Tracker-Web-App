@@ -76,16 +76,16 @@ python app.py
 http://127.0.0.1:5000
 
 Authentication...
-Register..
+->Register..
 <img width="677" height="818" alt="image" src="https://github.com/user-attachments/assets/149ca5fa-86ae-4652-8f8d-81e7912e5002" />
 
-Login..
+->Login..
 <img width="711" height="892" alt="image" src="https://github.com/user-attachments/assets/8632b98f-d366-48ec-b579-f3972c3a3f97" />
 
-DashBoard..
+->DashBoard..
 <img width="1800" height="857" alt="image" src="https://github.com/user-attachments/assets/8a1545df-2699-4fb8-add7-084dfaede753" />
 
-Manage Subjects..
+M->anage Subjects..
 <img width="1847" height="905" alt="image" src="https://github.com/user-attachments/assets/8bf6af81-c295-4b4d-88d3-a41fbf9a7352" />
 
 
